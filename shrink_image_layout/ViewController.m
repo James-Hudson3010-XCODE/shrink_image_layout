@@ -20,4 +20,32 @@
 }
 
 
+
+
+-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+
+
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return 10;
+}
+
+
+
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString*           string       = [NSString stringWithFormat:@"Row %ld", (long)row];
+    NSAttributedString* rowTitle;
+
+    rowTitle = [[NSAttributedString alloc] initWithString:string attributes:@{NSForegroundColorAttributeName:[UIColor greenColor]}];
+    
+    return rowTitle;
+
+}
+
+
 @end
